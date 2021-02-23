@@ -10,7 +10,12 @@
 </head>
 <body>
   
-  <h1>Welcome</h1>
+  <a href="{% url 'index' %}">Welcome</a>
+  
+  {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
+
+  {% block content %}
+  {% endblock %}
   
 </body>
 </html>
