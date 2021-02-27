@@ -1,11 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles'
 
+import NavbarHeader from '../components/header'
+
 const HomePage = () => {
      const classes = useStyle()
 
     return (
         <div className={classes.containerGrid}>
-            <div className={classes.header}> HEADER </div>
+            <div className={classes.header}> <NavbarHeader/> </div>
             <div className={classes.decorateImage}> DECORATION IMAGE </div>
             <div className={classes.categoryIcons}> CATEGORY ICONS  </div>
             <div className={classes.sloganProducts}> SLOGAN PRODUCTS </div>
