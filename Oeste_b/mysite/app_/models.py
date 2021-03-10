@@ -2,27 +2,20 @@ from django.db import models
 
 # Create your models here.
 
-class Sabrocitos(models.Model):
-  nombre=models.CharField(max_length=30)
-  gramos=models.CharField(max_length=8)
-  precio=models.FloatField()
+class Producto(models.Models):
+  nombre=models.CharField(max_length=50, verbose_name=marca)
+  cantidad=models.FloatField()
+  precio=models.IntegerField()
 
-class Raza(models.Model):
+class Cliente(models.Models):
   nombre=models.CharField(max_length=30)
-  gramos=models.CharField(max_length=8)
-  precio=models.FloatField()
+  dirección=models.CharField(max_length=30)
+  email=models.EmailField()
+  telefono=models.IntegerField()
 
-class dog_Selection(models.Model):
-  nombre=models.CharField(max_length=30)
-  gramos=models.CharField(max_length=8)
-  precio=models.FloatField()
-
-class Pedigree(models.Model):
-  nombre=models.CharField(max_length=30)
-  gramos=models.CharField(max_length=8)
-  precio=models.FloatField()
-
-class Eukanuba(models.Model):
-  nombre=models.CharField(max_length=30)
-  gramos=models.CharField(max_length=8)
-  precio=models.FloatField()
+class Pedido(models.Models):
+  cliente=models.CharField(max_length=30)
+  pedido=models.CharField(max_length=30)
+  cantidad=models.FloatField()
+  precio=models.IntegerField()
+  entrega=models.BooleanField(blank=True, null=True)
