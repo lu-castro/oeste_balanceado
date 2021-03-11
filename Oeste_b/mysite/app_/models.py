@@ -3,9 +3,12 @@ from django.db import models
 # Create your models here.
 
 class Producto(models.Model):
-  nombre=models.CharField(max_length=50, verbose_name="marca")
-  cantidad=models.FloatField()
+  producto=models.CharField(max_length=50)
+  cantidad=models.FloatField(max_length=20, verbose_name="kilogramos")
   precio=models.IntegerField()
+
+  def __str__(self):
+    return self.producto
 
 class Cliente(models.Model):
   nombre=models.CharField(max_length=30)
@@ -16,6 +19,6 @@ class Cliente(models.Model):
 class Pedido(models.Model):
   cliente=models.CharField(max_length=30)
   pedido=models.CharField(max_length=30)
-  cantidad=models.FloatField()
+  cantidad=models.CharField(max_length=20, verbose_name="kilogramos")
   precio=models.IntegerField()
   entrega=models.BooleanField(blank=True, null=True)
